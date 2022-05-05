@@ -52,7 +52,7 @@ def Table(func,N,L):
     
     data = {'an_analytical':a_an,'an_cal':a_cal,'bn_analytical':[0]*N,'bn_cal':b_cal}
     df = pd.DataFrame(data)
-    df.to_csv(f'table_{N}.csv',index = False)
+    np.savetxt(f'table_{N}.csv',df)
     return df
     
 def func(x):
@@ -67,9 +67,6 @@ def func(x):
 func = np.vectorize(func)
 
 
-x = np.arange(-2,2,0.2)
-
-plt.plot(x,func(x))
 
 def func_plot(x0,x1,step,N_f,Func_an):
     m = np.floor(np.log2(N_f))
@@ -101,10 +98,10 @@ print(Table(func,10, 1))
 T = Partials(func,32, 1)([0.5,1])
 y = func(0.5)
 
-data = {'x':[0.5,1],'Y analytical':[y,'Nan'],'Y calc':T}
+data = {'x':[0.5,1],'Y analytical':[y,500],'Y calc':T}
 df = pd.DataFrame(data)
 print(df)
-df.to_csv('table2.csv')
+np.savetxt('table2.csv',df)
 
 
     
