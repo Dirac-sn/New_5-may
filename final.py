@@ -52,7 +52,6 @@ def Table(func,N,L):
     
     data = {'an_analytical':a_an,'an_cal':a_cal,'bn_analytical':[0]*N,'bn_cal':b_cal}
     df = pd.DataFrame(data)
-    np.savetxt(f'table_{N}.csv',df)
     return df
     
 def func(x):
@@ -101,7 +100,7 @@ y = func(0.5)
 data = {'x':[0.5,1],'Y analytical':[y,500],'Y calc':T}
 df = pd.DataFrame(data)
 print(df)
-np.savetxt('table2.csv',df)
+
 
 
     
