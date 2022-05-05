@@ -1,3 +1,4 @@
+# -*- coding: future_fstrings -*-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
@@ -52,6 +53,7 @@ def Table(func,N,L):
     
     data = {'an_analytical':a_an,'an_cal':a_cal,'bn_analytical':[0]*N,'bn_cal':b_cal}
     df = pd.DataFrame(data)
+   
     return df
     
 def func(x):
