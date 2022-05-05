@@ -1,4 +1,4 @@
-# -*- coding: future_fstrings -*-
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
@@ -81,7 +81,7 @@ def func_plot(x0,x1,step,N_f,Func_an):
         
     fig,ax = plt.subplots()
     for i in range(len(N)):
-        ax.plot(x,sol[i],f'--{ls[i]}',label = f'for N = {N[i]}')
+        ax.plot(x,sol[i],ls = '--',marker = ls[i],label = N[i])
     ax.plot(x,Func_an(x)) 
     ax.legend()
     ax.set_title('For the given periodic function')
