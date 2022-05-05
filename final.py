@@ -52,7 +52,7 @@ def Table(func,N,L):
     
     data = {'an_analytical':a_an,'an_cal':a_cal,'bn_analytical':[0]*N,'bn_cal':b_cal}
     df = pd.DataFrame(data)
-    df.to_csv(f'table_{N}.csv')
+    df.to_csv(f'table_{N}.csv',index = False)
     return df
     
 def func(x):
